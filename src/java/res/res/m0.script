@@ -1,0 +1,226 @@
+@Case 0
+
+NextState
+
+@Case 1
+
+ShowMapName
+Wait 10
+NextState
+
+@Case 2
+
+SetFadeEnabled true
+GetUnitPlotRoute 0 8 0 3 8 false
+GetUnitPlotRoute 1 9 0 4 9 false
+GetUnitPlotRoute 0 10 0 3 10 false
+MoveMapAndCursor 5 9
+
+@Case 3
+
+MoveMapAndCursor 9 3
+SetCursorVisible true
+
+@Case 4
+
+Wait 10
+SetMapStepMax 12
+SetUnitSpeed slow
+NextState
+
+@Case 5
+
+ShowDialog 221 2 4
+Wait 10
+NextState
+
+@Case 6
+
+GetUnit 9 3 0
+Vibrate 100
+ScheduleUnitAnimationStop 400
+CreateSpriteAtUnit RedSpark 0 0 2 50
+Wait 10
+NextState
+
+@Case 7
+
+ShowDialog 222 2 4
+NextState
+
+@Case 8
+
+GetUnit 9 3 0
+CreateSpriteAtUnit Spark 0 0 1 50
+CreateSpriteAtUnit Smoke 0 -3 1 100
+RemoveUnit
+Wait 20
+NextState
+
+@Case 9
+
+SetCursorVisible false
+MoveMapAndCursor king 0
+
+@Case 10
+
+Wait 10
+NextState
+
+@Case 11
+
+ShowDialog 223 0 4
+Wait 5
+NextState
+
+@Case 12
+
+ShowDialog 224 5 4
+NextState
+
+@Case 13
+
+StartPlay
+NextState
+
+@Case 14
+
+Test StatusBarOffset = 0
+ShowHelp 0
+NextState
+
+@Case 15
+
+Test CurrentPlayer = 0
+Test GameState = 1
+Test AlphaWindow = 0
+ShowHelp 1
+NextState
+
+@Case 16
+
+Test CurrentPlayer = 0
+Test UnitFinishedMove != 0
+ShowHelp 2
+NextState
+
+@Case 17
+
+Test CurrentPlayer = 0
+Test UnitFinishedMove != 0
+ShowHelp 3
+NextState
+
+@Case 18
+
+Alt 2
+Test CountUnits -1 2 0 >= 3
+ShowHelp 4
+Jump 1
+Test CurrentTurn >= 1
+NextState
+
+@Case 19
+
+Test CurrentTurn >= 2
+ShowHelp 5
+NextState
+
+@Case 20
+
+ShowHelp 6
+NextState
+
+@Case 21
+
+Test GameState = 1
+Test CurrentPlayer = 0
+ShowHelp 7
+NextState
+
+@Case 22
+
+Test CountUnits -1 -1 1 = 0
+SetGameActive false
+Wait 20
+NextState
+
+@Case 23
+
+MoveMapAndCursor 1 1
+
+@Case 24
+
+CreateUnitPlotRoute 1 1 1 1 1 2 false true
+Wait 10
+NextState
+
+@Case 25
+
+MoveMapAndCursor 10 10
+
+@Case 26
+
+CreateUnitPlotRoute 0 1 10 10 10 9 false true
+Wait 10
+NextState
+
+@Case 27
+
+MoveMapAndCursor king 0
+
+@Case 28
+
+ShowDialog 225 5 4
+Wait 5
+NextState
+
+@Case 29
+
+ShowDialog 226 0 4
+SetGameActive true
+NextState
+
+@Case 30
+
+Test CountUnits -1 -1 1 = 0
+Test GameState = 0
+SetGameActive false
+SetCursorVisible false
+Wait 30
+NextState
+
+@Case 31
+
+SetFadeEnabled true
+SetFadeValue 0
+Wait 20
+NextState
+
+@Case 32
+
+ShowDialog 227 2 4
+Wait 10
+NextState
+
+@Case 33
+
+ShowDialog 228 0 4
+Wait 5
+NextState
+
+@Case 34
+
+ShowDialog 229 2 4
+Wait 5
+NextState
+
+@Case 35
+
+ShowDialog 230 0 4
+Wait 15
+NextState
+
+@Case 36
+
+CompleteMission
