@@ -7,7 +7,7 @@ The source code is stored in the [**AEIIRM_src.zip**](./AEIIRM_src.zip) file.
 ## Extract
 Run
 ```bash
-make extract
+make
 ```
 to extract the source code. The extracted files will be placed in the `java` directory.
 
